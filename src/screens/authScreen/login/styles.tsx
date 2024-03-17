@@ -5,20 +5,21 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    paddingTop: 200,
+    paddingTop: 150,
     backgroundColor: `${colors.primary[900]}`,
   },
   iconWrap: {
     position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 200,
+    height: 150,
     width: '100%',
     top: 30,
   },
   contentContainer: {
     flex: 1,
     width: '100%',
+    minHeight: '100%',
     paddingHorizontal: 20,
     paddingVertical: 40,
     backgroundColor: `${colors.white[900]}`,

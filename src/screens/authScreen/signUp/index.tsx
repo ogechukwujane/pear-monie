@@ -9,7 +9,11 @@ import {SignUpvalidationSchema} from '../validation';
 import {INavigationType} from '../../../navigation/type';
 import {useNavigation} from '@react-navigation/native';
 import {useSignupMutation} from '../../../store/authApi';
-import {successToast} from '../../../utils';
+import {
+  CustomKeyboardAvoidingView,
+  setUserName,
+  successToast,
+} from '../../../utils';
 
 export const SignUp = () => {
   const navigation = useNavigation<INavigationType>();
@@ -25,6 +29,7 @@ export const SignUp = () => {
       .unwrap()
       .then(res => {
         successToast('Successfully Signed Up');
+        setUserName(res.username);
         navigation.navigate('Login');
       })
       .catch(err => {
@@ -42,47 +47,49 @@ export const SignUp = () => {
     onSubmit,
   });
   return (
-    <View style={styles.container}>
-      <View style={styles.iconWrap}>
-        <FontAwesomeIcon icon={faMoneyBillWave} color="white" size={40} />
-      </View>
-      <View style={styles.contentContainer}>
-        <Text style={styles.header}>Welcome!</Text>
-        <Text style={styles.subTitle}>Please signup to use the app</Text>
-        <View style={styles.flexbox}>
-          <InputComp
-            value={values.username}
-            onChangeText={handleChange('username')}
-            placeholder={'Enter your username'}
-            label={'User Name*'}
-            errorMessage={touched.username ? errors.username : ''}
-          />
-          <InputWithIconComp
-            value={values.password}
-            onChangeText={handleChange('password')}
-            placeholder={'Enter your password'}
-            label={'Password*'}
-            errorMessage={touched.password ? errors.password : ''}
-          />
-          <InputComp
-            value={values.email}
-            onChangeText={handleChange('email')}
-            placeholder={'Enter your email'}
-            label={'Email*'}
-            errorMessage={touched.email ? errors.email : ''}
-          />
-          <ButtonComp
-            text={'Sign Up'}
-            isLoading={isLoading}
-            onPress={() => handleSubmit()}
-          />
-          <Text
-            style={styles.link}
-            onPress={() => navigation.navigate('Login')}>
-            Already have an account? Login
-          </Text>
+    <CustomKeyboardAvoidingView>
+      <View style={styles.container}>
+        <View style={styles.iconWrap}>
+          <FontAwesomeIcon icon={faMoneyBillWave} color="white" size={40} />
+        </View>
+        <View style={styles.contentContainer}>
+          <Text style={styles.header}>Welcome!</Text>
+          <Text style={styles.subTitle}>Please signup to use the app</Text>
+          <View style={styles.flexbox}>
+            <InputComp
+              value={values.username}
+              onChangeText={handleChange('username')}
+              placeholder={'Enter your username'}
+              label={'User Name*'}
+              errorMessage={touched.username ? errors.username : ''}
+            />
+            <InputWithIconComp
+              value={values.password}
+              onChangeText={handleChange('password')}
+              placeholder={'Enter your password'}
+              label={'Password*'}
+              errorMessage={touched.password ? errors.password : ''}
+            />
+            <InputComp
+              value={values.email}
+              onChangeText={handleChange('email')}
+              placeholder={'Enter your email'}
+              label={'Email*'}
+              errorMessage={touched.email ? errors.email : ''}
+            />
+            <ButtonComp
+              text={'Sign Up'}
+              isLoading={isLoading}
+              onPress={() => handleSubmit()}
+            />
+            <Text
+              style={styles.link}
+              onPress={() => navigation.navigate('Login')}>
+              Already have an account? Login
+            </Text>
+          </View>
         </View>
       </View>
-    </View>
+    </CustomKeyboardAvoidingView>
   );
 };
