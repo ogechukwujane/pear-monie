@@ -12,17 +12,17 @@ export const styles = StyleSheet.create({
     paddingLeft: 12,
     borderWidth: 1,
     borderStyle: 'solid',
-    borderColor: `${colors.white[800]}`,
+    borderColor: `${colors.primary[900]}`,
   },
   label: {
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: '400',
-    color: `${colors.white[800]}`,
+    color: `${colors.black[200]}`,
   },
   errorMessage: {
-    fontSize: 16,
+    fontSize: 12,
     fontWeight: '400',
-    color: `${colors.red[800]}`,
+    color: `${colors.red[900]}`,
   },
   iconButton: {
     width: 20,
@@ -34,6 +34,7 @@ export const styles = StyleSheet.create({
     paddingLeft: 12,
   },
   passwordWrap: {
+    paddingRight: 12,
     height: 50,
     gap: 10,
     flexDirection: 'row',
@@ -41,6 +42,6 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 1,
     borderStyle: 'solid',
-    borderColor: `${colors.white[800]}`,
+    borderColor: `${colors.primary[900]}`,
   },
 });

@@ -6,11 +6,12 @@ import {colors} from '../../utils';
 interface IButtonComp {
   text: string;
   isLoading: boolean;
+  onPress: () => void;
 }
 
-export const ButtonComp: FC<IButtonComp> = ({text, isLoading}) => {
+export const ButtonComp: FC<IButtonComp> = ({text, isLoading, onPress}) => {
   return (
-    <Pressable style={styles.button}>
+    <Pressable style={styles.button} onPress={onPress}>
       {!isLoading ? (
         <Text style={styles.text}>{text}</Text>
       ) : (

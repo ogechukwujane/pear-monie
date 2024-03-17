@@ -10,6 +10,7 @@ interface IInputComp {
   onChangeText: (text: string) => void;
   placeholder: string;
   label: string;
+  errorMessage?: string;
 }
 
 export const InputComp: FC<IInputComp> = ({
@@ -17,6 +18,7 @@ export const InputComp: FC<IInputComp> = ({
   onChangeText,
   placeholder,
   label,
+  errorMessage,
 }) => {
   return (
     <View style={styles.inputWrap}>
@@ -28,7 +30,7 @@ export const InputComp: FC<IInputComp> = ({
         placeholder={placeholder}
         placeholderTextColor={colors.white[400]}
       />
-      <Text style={styles.errorMessage}></Text>
+      {errorMessage && <Text style={styles.errorMessage}>{errorMessage}</Text>}
     </View>
   );
 };
@@ -38,6 +40,7 @@ export const InputWithIconComp: FC<IInputComp> = ({
   onChangeText,
   placeholder,
   label,
+  errorMessage,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -59,10 +62,11 @@ export const InputWithIconComp: FC<IInputComp> = ({
           <FontAwesomeIcon
             icon={!showPassword ? faEye : faEyeSlash}
             size={20}
+            color={colors.primary[800]}
           />
         </Pressable>
       </View>
-      <Text style={styles.errorMessage}></Text>
+      {errorMessage && <Text style={styles.errorMessage}>{errorMessage}</Text>}
     </View>
   );
 };

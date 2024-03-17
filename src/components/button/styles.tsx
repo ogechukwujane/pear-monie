@@ -8,13 +8,14 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 1,
     borderStyle: 'solid',
-    borderColor: `${colors.white[800]}`,
+    borderColor: `${colors.primary[900]}`,
+    backgroundColor: `${colors.primary[900]}`,
     alignItems: 'center',
     justifyContent: 'center',
   },
   text: {
-    fontSize: 12,
-    fontWeight: '400',
+    fontSize: 18,
+    fontWeight: '500',
     color: `${colors.white[800]}`,
   },
 });
