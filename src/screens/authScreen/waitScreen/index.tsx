@@ -8,8 +8,8 @@ export const WaitScreen = () => {
   const navigation = useNavigation<INavigationType>();
   useEffect(() => {
     const timeout = setTimeout(() => {
-      return navigation.navigate('Login');
-    }, 1000);
+      return navigation.navigate('SplashScreen');
+    }, 500);
     return () => clearTimeout(timeout);
   }, []);
 

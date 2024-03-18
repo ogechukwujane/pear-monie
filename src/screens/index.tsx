@@ -1,2 +1,2 @@
-export {Login, SignUp, WaitScreen} from './authScreen';
+export {Login, SignUp, WaitScreen, SplashScreen} from './authScreen';
 export {Home} from './homeScreen';
