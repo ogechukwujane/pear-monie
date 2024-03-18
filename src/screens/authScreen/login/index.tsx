@@ -2,8 +2,6 @@ import React from 'react';
 import {Text, View} from 'react-native';
 import {ButtonComp, InputComp, InputWithIconComp} from '../../../components';
 import {styles} from './styles';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faMoneyBillWave} from '@fortawesome/free-solid-svg-icons';
 import {useFormik} from 'formik';
 import {LoginvalidationSchema} from '../validation';
 import {useNavigation} from '@react-navigation/native';
@@ -48,7 +46,7 @@ export const Login = () => {
     <CustomKeyboardAvoidingView>
       <View style={styles.container}>
         <View style={styles.iconWrap}>
-          <FontAwesomeIcon icon={faMoneyBillWave} color="white" size={40} />
+          <Text style={styles.title}>Login</Text>
         </View>
         <View style={styles.contentContainer}>
           <Text style={styles.header}>Welcome Back!</Text>

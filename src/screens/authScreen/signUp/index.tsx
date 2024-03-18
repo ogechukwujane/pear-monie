@@ -50,7 +50,7 @@ export const SignUp = () => {
     <CustomKeyboardAvoidingView>
       <View style={styles.container}>
         <View style={styles.iconWrap}>
-          <FontAwesomeIcon icon={faMoneyBillWave} color="white" size={40} />
+          <Text style={styles.title}>Sign Up</Text>
         </View>
         <View style={styles.contentContainer}>
           <Text style={styles.header}>Welcome!</Text>

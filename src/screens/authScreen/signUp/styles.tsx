@@ -8,6 +8,11 @@ export const styles = StyleSheet.create({
     paddingTop: 150,
     backgroundColor: `${colors.primary[900]}`,
   },
+  title: {
+    fontSize: 28,
+    fontWeight: '600',
+    color: `${colors.white[900]}`,
+  },
   iconWrap: {
     position: 'absolute',
     alignItems: 'center',

@@ -16,6 +16,11 @@ export const styles = StyleSheet.create({
     width: '100%',
     top: 30,
   },
+  title: {
+    fontSize: 28,
+    fontWeight: '600',
+    color: `${colors.white[900]}`,
+  },
   contentContainer: {
     flex: 1,
     width: '100%',
