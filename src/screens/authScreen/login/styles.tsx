@@ -52,5 +52,6 @@ export const styles = StyleSheet.create({
     textDecorationStyle: 'solid',
     textDecorationLine: 'underline',
     textDecorationColor: `${colors.primary[400]}`,
+    color: `${colors.primary[900]}`,
   },
 });
