@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderStyle: 'solid',
     borderColor: `${colors.primary[900]}`,
+    color: `${colors.black[900]}`,
   },
   label: {
     fontSize: 14,
@@ -32,6 +33,7 @@ export const styles = StyleSheet.create({
     width: '90%',
     height: '100%',
     paddingLeft: 12,
+    color: `${colors.black[900]}`,
   },
   passwordWrap: {
     paddingRight: 12,
